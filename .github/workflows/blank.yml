@@ -34,3 +34,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      # Runs my check bash script
+      - name: Run Check
+        run: |
+          if [[ $( ./check.sh ) ]]
+          then
+            echo '::error file={check.sh},line={1},endLine={1},title={Check Failed}::{The Check script returned a Fail message}'
+          fi
