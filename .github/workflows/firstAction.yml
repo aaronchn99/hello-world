@@ -41,7 +41,7 @@ jobs:
       
       # Runs my check bash script
       - name: Run Check
-        if: $( ./check.sh )
+        if: ${{ $( ./check.sh ) }}
         run: |
           echo '::error file={check.sh},line={1},endLine={1},title={Check Failed}::{The Check script returned a Fail message}'
           exit 1
