@@ -35,6 +35,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       
+      # Reveal file permissions in repo root
+      - name: Show files
+        run: ls -la
+      
       # Runs my check bash script
       - name: Run Check
         run: |
